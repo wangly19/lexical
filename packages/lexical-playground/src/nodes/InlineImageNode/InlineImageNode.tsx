@@ -19,7 +19,12 @@ import type {
   Spread,
 } from 'lexical';
 
-import {$applyNodeReplacement, createEditor, DecoratorNode} from 'lexical';
+import {
+  $applyNodeReplacement,
+  createEditor,
+  DecoratorNode,
+  isHTMLImageElement,
+} from 'lexical';
 import * as React from 'react';
 import {Suspense} from 'react';
 
@@ -45,7 +50,7 @@ export interface UpdateInlineImagePayload {
 }
 
 function $convertInlineImageElement(domNode: Node): null | DOMConversionOutput {
-  if (domNode instanceof HTMLImageElement) {
+  if (isHTMLImageElement(domNode)) {
     const {alt: altText, src, width, height} = domNode;
     const node = $createInlineImageNode({altText, height, src, width});
     return {node};

@@ -186,6 +186,7 @@ export {
   isDOMUnmanaged,
   isHTMLAnchorElement,
   isHTMLElement,
+  isHTMLImageElement,
   isInlineDomNode,
   isLexicalEditor,
   isSelectionCapturedInDecoratorInput,

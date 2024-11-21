@@ -1691,6 +1691,15 @@ export function isHTMLAnchorElement(x: Node): x is HTMLAnchorElement {
 }
 
 /**
+ *
+ * @param x - The element being tested
+ * @returns Returns true if x is an HTML img tag, false otherwise
+ */
+export function isHTMLImageElement(x: Node): x is HTMLImageElement {
+  return isHTMLElement(x) && x.tagName === 'IMG';
+}
+
+/**
  * @param x - The element being testing
  * @returns Returns true if x is an HTML element, false otherwise.
  */
